@@ -1,0 +1,27 @@
+1. Build an image library of vessels, battle ships, patrol ships etc. and compare given template ship image and find the match from the library. 
+2. Several cameras can be connected to a single edge device, even an indirect connection. When the platform tells to switch on a camera, the camera should be switched on. If it gets an input to move the camera should move etc.
+3.Evaluate - whether edgex server or magistrala edge to be used on the jetson (or any other edge device of choice in future.
+4. Run a classification/any other required algo and get the result into honeycomb via edgex and/or magistrala.
+5. Send the classification result through magistrala/edgex platform to the backend server. 
+
+Task progress
+There is a dataset of : 1: Cargo, 2: Military, 3: Carrier, 4: Cruise, 5: Tankers. I have a code which is performing good classification. But the use case we require is not just classification but recognition of the exact ship.
+There are several types of military ships that exist within the military class.(https://www.kaggle.com/datasets/arpitjain007/game-of-deep-learning-ship-datasets/data) 
+
+Classification algorithm correctly detects the class of the ship. But it cannot identify the difference between 2 different military ships. So a mere classification algorithm is not sufficient for our use case. We need an algorithm which calculates how close the given sample image is to the observed image. 
+
+In the ship dataset, no ship is repeated. Hence I took example of water bottles. Even though 2 different water bottles are classified as class "bottle", the code I have identifies the difference between two water bottles. 
+
+The same code can differentiate between two different looking books, two different looking watches, persons and so on... Basically it differentiates objects within the same class. Once we have two images of the same ship, we can use the same code. (https://docs.google.com/presentation/d/1rXglU6XEwW_l3WQSvQtIwtvotg6Ue7VsY9grYz8lui8/edit?usp=sharing).
+
+I have searched all the docs of magistrala, and didn't find any camera reference. There are some image references, but they are about docker images.
+EdgeX has camera functionality but EdgeX has not been integrated into honeycomb as of now. My understanding from this is that edgex installation on edge device would work better.
+
+We should write classification and recognition codes in edgex platform, and send the output to honeycomb and if we want to store we need to create a new database. (This is subject to change as we learn more about edgex and honeycomb integration)
+
+I have created a socket and sent a signal from my laptop to jetson orin. The camera which is connected to orin is switched on after receiving signal. We might need an actuator signal from honeycomb/edgex to replicate the same i.e switch on the camera if there is an alert.
+
+Last week I created a postgres database and filled a RJY excel sheet into it. The database is stored in my laptop and it persisted even after multiple shutdowns of the laptop. I tried to access the database using Viswa's laptop, but it was difficult because the data doesn't easily flow from wsl to windows. I created the database in wsl, and tried accessing it from Viswa's windows. 
+
+
+

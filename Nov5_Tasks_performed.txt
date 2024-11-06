@@ -1,0 +1,24 @@
+Tasks performed
+
+1. Found a tool ngrok which creates a tunnel which helps in accessing a service remotely.
+Used it to send a signal remotely to turn on the camera. Free tier has limited BW and hence connection ended soon.
+This ngrok can be used for remote access without the need of knowing public IP of our office.
+
+2. I wrote a text file and uploaded it using python in built web server. I was able to view the text from my mobile using http:<IP>:<port>
+After using ngrok I was able to view even through mobile data. People who are far away from office also accessed the file.
+
+3. Created a webpage with a yes/no dialog box. My plan is to switch on the camera when yes is clicked. Have to explore further on this.
+
+4. Edgex did not work in my laptop. There is an error of process 5432. It usually belongs to postgres, and I have already installed postgres.
+I changed 5432 to 5434 but still it showed the same error- 5432 process error. I have to debug it. I will run it on jetson device and check if it works.
+
+5. To perform remote live streaming, many websites suggested to use a cloud service. I will look if there are any other options for it.
+edgex also supports rtsp streaming. 
+
+To do
+
+1. Spend some time to debug edgex installation in laptop.
+
+2. Install and test edgex on jetson.
+
+3. Look for alternative ways of streaming like rtsp, and try to access the stream from a different network (mobile data) or remotely.

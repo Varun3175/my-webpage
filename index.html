@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera Activation</title>
+    <style>
+        /* Styling for the layout */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Container for the buttons */
+        .buttonContainer {
+            margin-bottom: 20px;
+        }
+
+        /* Split the container into two halves */
+        .contentContainer {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            justify-content: space-between;
+        }
+
+        #snapshotContainer, #VideoContainer {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Camera Activation</h1>
+
+    <!-- Button to activate camera -->
+    <div class="buttonContainer">
+        <button id="activateCamera">Turn on Camera</button>
+        <button id="activateVideo">Turn on Video</button>
+    </div>
+
+    <!-- Container to hold both snapshot and video sections -->
+    <div class="contentContainer">
+        <!-- Container for the snapshot on the left half -->
+        <div id="snapshotContainer">
+            <!-- Snapshot content will be displayed here -->
+        </div>
+
+        <!-- Container for the video on the right half -->
+        <div id="VideoContainer">
+            <!-- Video content will be displayed here -->
+        </div>
+    </div>
+
+    <script src="script_camera.js"></script>
+    <script src="script_video.js"></script>
+</body>
+</html>
