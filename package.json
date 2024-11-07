@@ -1,7 +1,16 @@
 {
+  "name": "webcam-app",
+  "version": "1.0.0",
+  "description": "Webcam Snapshot App",
+  "main": "index.html",
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.21.1",
     "node-webcam": "^0.8.2"
-  }
+  },
+  "author": "",
+  "license": "ISC"
 }

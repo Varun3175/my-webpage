@@ -18,6 +18,12 @@
             margin-bottom: 20px;
         }
 
+        #stopVideoButton {
+            display: none;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
         /* Split the container into two halves */
         .contentContainer {
             display: flex;
@@ -28,11 +34,13 @@
 
         #snapshotContainer, #VideoContainer {
             width: 50%;
+            max-width: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
             border: 1px solid #ccc;
         }
+        
     </style>
 </head>
 <body>
@@ -42,6 +50,7 @@
     <div class="buttonContainer">
         <button id="activateCamera">Turn on Camera</button>
         <button id="activateVideo">Turn on Video</button>
+        <button id="stopVideoButton" style="display: none;">Stop Video</button>
     </div>
 
     <!-- Container to hold both snapshot and video sections -->

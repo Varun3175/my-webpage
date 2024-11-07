@@ -21,10 +21,24 @@ activateVideo.addEventListener('click', () => {
                 VideoContainer.appendChild(video);
 
                 // Stop the stream after 10 seconds
+                /*
                 setTimeout(() => {
                     stream.getTracks().forEach(track => track.stop()); // Stop the webcam
                     VideoContainer.innerHTML = 'Streaming ended'; // Message after stopping
                 }, 10000);  // 10000 ms = 10 seconds
+                */
+                // Show the Stop Video button once streaming starts
+                stopVideoButton.style.display = 'inline-block';  // Make button visible
+
+                stopVideoButton.addEventListener('click', () => {
+                    if (stream) {
+                        // Stop all tracks in the video stream
+                        stream.getTracks().forEach(track => track.stop());
+                        VideoContainer.innerHTML = 'Streaming ended'; // Display message
+                        stopVideoButton.style.display = 'none'; // Hide the button again after stopping
+                    }
+                });
+                
             })
             .catch((error) => {
                 console.error("Error accessing webcam:", error);
